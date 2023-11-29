@@ -452,10 +452,10 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/System/Library/Frameworks/Kernel.framework/Headers";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(TARGET_BUILD_DIR)/zydis",
+					"$(CONFIGURATION_BUILD_DIR)/zydis",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYSTEM_HEADER_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/xnu_override/zydis/include $(TARGET_BUILD_DIR)/zydis";
+				SYSTEM_HEADER_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/xnu_override/zydis/include $(CONFIGURATION_BUILD_DIR)/zydis";
 			};
 			name = Debug;
 		};
@@ -469,10 +469,10 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/System/Library/Frameworks/Kernel.framework/Headers";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(TARGET_BUILD_DIR)/zydis",
+					"$(CONFIGURATION_BUILD_DIR)/zydis",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYSTEM_HEADER_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/xnu_override/zydis/include $(TARGET_BUILD_DIR)/zydis";
+				SYSTEM_HEADER_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/xnu_override/zydis/include $(CONFIGURATION_BUILD_DIR)/zydis";
 			};
 			name = Release;
 		};

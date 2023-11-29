@@ -10,7 +10,7 @@ fi
 
 
 ZYDIS_DIR="${PROJECT_DIR}/xnu_override/zydis"
-PRODUCT_DIR="${TARGET_BUILD_DIR}/zydis"
+PRODUCT_DIR="${CONFIGURATION_BUILD_DIR}/zydis"
 
 GENERATOR="Unix Makefiles"
 if which -s ninja; then
