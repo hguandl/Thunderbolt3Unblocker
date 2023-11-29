@@ -8,6 +8,9 @@ if [ -z "${TARGET_BUILD_DIR}" ]; then
     TARGET_BUILD_DIR="$(mktemp -d)"
 fi
 
+if [ "$(arch)" = "arm64" ]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
 
 ZYDIS_DIR="${PROJECT_DIR}/xnu_override/zydis"
 PRODUCT_DIR="${CONFIGURATION_BUILD_DIR}/zydis"
@@ -29,7 +32,7 @@ case "$1" in
         if [ ! -f "${PRODUCT_DIR}/CMakeCache.txt" ]; then
             mkdir -p "${PRODUCT_DIR}"
             pushd "${PRODUCT_DIR}"
-            CFLAGS="${OTHER_CFLAGS}" cmake -G "${GENERATOR}" "${ZYDIS_DIR}"
+            CFLAGS="${OTHER_CFLAGS}" cmake -G "${GENERATOR}" -DCMAKE_BUILD_TYPE=$CONFIGURATION -DCMAKE_OSX_ARCHITECTURES=x86_64 "${ZYDIS_DIR}"
             popd
         fi
         cmake --build "${PRODUCT_DIR}"
